@@ -1,0 +1,29 @@
+name: 4. Promote to Production
+
+on:
+  workflow_dispatch:
+    inputs:
+      app_name:
+        description: 'Qual app promover?'
+        required: true
+        type: choice
+        options:
+          - frontend
+          - backend
+      version:
+        description: 'Versão exata (ex: 1.2.0)'
+        required: true
+
+jobs:
+  prod-deploy:
+    runs-on: ubuntu-latest
+    environment: Production
+    steps:
+      - name: Promote to Prod
+        run: |
+          echo "Buscando a imagem aprovada da branch release/${{ inputs.app_name }}-v${{ inputs.version }}..."
+          echo "Fazendo deploy do ${{ inputs.app_name }} versão ${{ inputs.version }} em PRODUÇÃO!"
+          
+      - name: Cleanup (Opcional)
+        run: |
+          echo "Deploy concluído. A branch release/${{ inputs.app_name }}-v${{ inputs.version }} pode ser deletada."

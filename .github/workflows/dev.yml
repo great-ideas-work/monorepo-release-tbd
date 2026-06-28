@@ -1,0 +1,44 @@
+name: 1. Main - Dev Deploy & Release PR
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  # Job 1: O Bot do Release Please cria/atualiza o PR de changelog
+  release-please:
+    runs-on: ubuntu-latest
+    outputs:
+      releases_created: ${{ steps.release.outputs.releases_created }}
+    steps:
+      - uses: googleapis/release-please-action@v4
+        id: release
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
+
+  # Job 2: O Deploy contínuo para o ambiente de DEV usando Turbo
+  dev-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Necessário para o Turbo comparar commits
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Dependencies (Yarn 1.22 Clássico)
+        run: yarn install --frozen-lockfile
+
+      - name: Build & Deploy Dev (Apenas o que mudou)
+        # O Turbo vai rodar o build apenas nos apps que tiveram alterações desde o commit anterior
+        run: |
+          echo "Rodando Turbo para Dev..."
+          yarn turbo run build --filter="...[HEAD^1]"
+          echo "Deploying to DEV environment..."

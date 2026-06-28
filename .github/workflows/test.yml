@@ -1,0 +1,34 @@
+name: 3. RC - Test Environment Deploy
+
+on:
+  push:
+    branches:
+      - 'release/*'
+
+jobs:
+  test-deploy:
+    runs-on: ubuntu-latest
+    environment: Test # Cria o painel visual de "Active Deployments" no GitHub
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node & Install
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: yarn install --frozen-lockfile
+
+      - name: Extract App Name from Branch
+        id: extract
+        # Pega "release/frontend-v1.2.0" e isola o "frontend" para passar pro Turbo
+        run: |
+          BRANCH_NAME=${GITHUB_REF#refs/heads/}
+          APP_NAME=$(echo $BRANCH_NAME | sed 's/release\/\(.*\)-v.*/\1/')
+          echo "app=$APP_NAME" >> $GITHUB_OUTPUT
+
+      - name: Build RC Image & Deploy to Test
+        run: |
+          echo "Iniciando processo de Release Candidate para: ${{ steps.extract.outputs.app }}"
+          yarn turbo run build --filter=${{ steps.extract.outputs.app }}
+          echo "Deploying to TEST environment. Cronômetro de 48h iniciado!"
