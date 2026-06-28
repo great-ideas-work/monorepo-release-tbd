@@ -5,7 +5,7 @@ import tseslint from "typescript-eslint";
 import onlyWarn from "eslint-plugin-only-warn";
 
 /**
- * A shared ESLint cnfiguration for the repository.
+ * A shared ESLint cn the repository.
  *
  * @type {import("eslint").Linter.Config[]}
  * */
