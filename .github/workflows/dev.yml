@@ -9,6 +9,9 @@ jobs:
   # Job 1: O Bot do Release Please cria/atualiza o PR de changelog
   release-please:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     outputs:
       releases_created: ${{ steps.release.outputs.releases_created }}
     steps:
