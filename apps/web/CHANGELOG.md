@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.1](https://github.com/diiogocosta/monorepo-release-tbd/compare/web-v0.6.0...web-v0.6.1) (2026-07-03)
+
+
+### Bug Fixes
+
+* web bug fixed ([ac04b7c](https://github.com/diiogocosta/monorepo-release-tbd/commit/ac04b7c1418aaa6b09c80d02db24c145ff2f420b))
+
 ## [0.6.0](https://github.com/diiogocosta/monorepo-release-tbd/compare/web-v0.5.0...web-v0.6.0) (2026-07-03)
 
 
