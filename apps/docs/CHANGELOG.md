@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/diiogocosta/monorepo-release-tbd/compare/docs-v1.1.0...docs-v1.1.1) (2026-07-03)
+
+
+### Bug Fixes
+
+* only docs change ([486a062](https://github.com/diiogocosta/monorepo-release-tbd/commit/486a062ee06229bacecdf0fbeb30ac7d1eadb448))
+
 ## [1.1.0](https://github.com/diiogocosta/monorepo-release-tbd/compare/docs-v1.0.1...docs-v1.1.0) (2026-07-03)
 
 
