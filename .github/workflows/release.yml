@@ -1,27 +1,21 @@
-name: 2. Cut Release Branch Automator
+name: Release Please
 
 on:
   push:
-    tags:
-      - 'docs-v*'
-      - 'web-v*'
+    branches: [main]
+
+permissions:
+  contents: write
+  pull-requests: write
 
 jobs:
-  create-branch:
-    runs-on: ubuntu-latest
+  release-please:
+    name: Release Please
+    runs-on: [truckapi-runners-dev]
     steps:
-      - name: Checkout Code at Tag
-        uses: actions/checkout@v4
-
-      - name: Extract Branch Name
-        id: extract
-        # Transforma a tag "frontend-v1.2.0" na branch "release/frontend-v1.2.0"
-        run: |
-          TAG_NAME=${GITHUB_REF#refs/tags/}
-          BRANCH_NAME="release/$TAG_NAME"
-          echo "branch=$BRANCH_NAME" >> $GITHUB_OUTPUT
-
-      - name: Create and Push Release Branch
-        run: |
-          git checkout -b ${{ steps.extract.outputs.branch }}
-          git push origin ${{ steps.extract.outputs.branch }}
+      - uses: googleapis/release-please-action@v4
+        with:
+          token: ${{ secrets.GH_SECRET }}
+          target-branch: main
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json

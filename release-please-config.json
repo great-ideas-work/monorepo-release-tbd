@@ -1,4 +1,5 @@
 {
+  "release-type": "node",
   "changelog-sections": [
     { "type": "feat", "hidden": false, "section": "Features" },
     { "type": "feature", "hidden": false, "section": "Features" },
@@ -10,13 +11,11 @@
   "packages": {
     "apps/docs": {
       "release-type": "node",
-      "component": "docs",
-      "include-component-in-changelog": true
+      "component": "docs"
     },
     "apps/web": {
       "release-type": "node",
-      "component": "web",
-      "include-component-in-changelog": true
+      "component": "web"
     }
   }
 }
