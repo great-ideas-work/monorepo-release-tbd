@@ -1,0 +1,19 @@
+# Changelog
+
+## [0.6.0](https://github.com/diiogocosta/monorepo-release-tbd/compare/web-v0.5.0...web-v0.6.0) (2026-07-03)
+
+
+### Features
+
+* change web ds ([0a812e6](https://github.com/diiogocosta/monorepo-release-tbd/commit/0a812e64a61ea2e555a5850d95e65027191d87d4))
+
+
+### Bug Fixes
+
+* colors ([b37137f](https://github.com/diiogocosta/monorepo-release-tbd/commit/b37137f75f94fc3e8c3dbd51cc4052a8f0b88888))
+
+
+### Miscellaneous Chores
+
+* release flow ([eaf7d18](https://github.com/diiogocosta/monorepo-release-tbd/commit/eaf7d18cffd41b1bdcdd5e41abf4b50e7a242db2))
+* update release-please ([02e5731](https://github.com/diiogocosta/monorepo-release-tbd/commit/02e573192457e3d23a5739fa1608d09ab55a41c5))
