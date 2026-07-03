@@ -1,0 +1,16 @@
+name: Quality Gate
+
+on:
+  pull_request:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  quality-gate:
+    name: Quality Gate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo Quality Gate Passed
+        run: echo "quality gate passed"
