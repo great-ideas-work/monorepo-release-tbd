@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.0.0](https://github.com/diiogocosta/monorepo-release-tbd/compare/web-v0.6.1...web-v1.0.0) (2026-07-03)
+
+
+### ⚠ BREAKING CHANGES
+
+* upgrade endpoints
+
+### Features
+
+* upgrade endpoints ([9ae10c3](https://github.com/diiogocosta/monorepo-release-tbd/commit/9ae10c3cbefbc07332270d23797830eb7f529975))
+
 ## [0.6.1](https://github.com/diiogocosta/monorepo-release-tbd/compare/web-v0.6.0...web-v0.6.1) (2026-07-03)
 
 
