@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/great-ideas-work/monorepo-release-tbd/compare/web-v1.0.0...web-v1.1.0) (2026-07-03)
+
+
+### Features
+
+* change web app ([981e40c](https://github.com/great-ideas-work/monorepo-release-tbd/commit/981e40c0c0f20fd7c737ccb1ed03ae958810748d))
+
 ## [1.0.0](https://github.com/diiogocosta/monorepo-release-tbd/compare/web-v0.6.1...web-v1.0.0) (2026-07-03)
 
 
